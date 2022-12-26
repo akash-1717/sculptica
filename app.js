@@ -52,7 +52,7 @@ db.connect(function(err) {
         db.query(`SELECT table_name FROM information_schema.tables WHERE table_schema = 'sculptica';`,(err,tables)=>{
             // console.log(tables[2].TABLE_NAME);
             for(var i=0;i<tables.length;i++){
-                if(tables[i].TABLE_NAME == "login_cred") flag1 = 1;
+                if(tables[i].TABLE_NAME == "LOGIN_CRED") flag1 = 1;
             }
         
 
@@ -61,13 +61,13 @@ db.connect(function(err) {
                 db.query(sql,function(err,result){
                     if(err) console.log(err);
                     else{
-                        console.log("login_cred created");
+                        console.log("LOGIN_CRED created");
                     }
                 });
             }
            
             for(var i=0;i<tables.length;i++){
-                if(tables[i].TABLE_NAME == "diet") flag2 = 1;
+                if(tables[i].TABLE_NAME == "DIET") flag2 = 1;
             }
      
 
@@ -87,18 +87,18 @@ db.connect(function(err) {
                         db.query("INSERT INTO DIET (sno,wtstatus,recommendation) VALUES(?,?,?)",[3,"OBESE",obese],(err,result,field)=>{
                             if(err) console.log(err);
                         });
-                        console.log("diet table created");
+                        console.log("DIET table created");
                     }
                 });
             }
 
             for(var i=0;i<tables.length;i++){
-                if(tables[i].TABLE_NAME == "trainers") flag3 = 1;
+                if(tables[i].TABLE_NAME == "TRAINERS") flag3 = 1;
             }
          
 
             if(!flag3){
-                var sql = "CREATE TABLE TRAINERS (TID INT PRIMARY KEY AUTO_INCREMENT,TNAME VARCHAR(20),SPECIFICATION VARCHAR(20),EMAIL VARCHAR(50));"
+                var sql = "CREATE TABLE TRAINERS (tid int primary key auto_increment,tname varchar(20),specification varchar(20),email varchar(50));"
                 db.query(sql,function(err,result){
                     if(err) console.log(err);
                     else{
@@ -109,12 +109,12 @@ db.connect(function(err) {
 
 
             for(var i=0;i<tables.length;i++){
-                if(tables[i].TABLE_NAME == "users") flag4 = 1;
+                if(tables[i].TABLE_NAME == "USERS") flag4 = 1;
             }
       
 
             if(!flag4){
-                var sql = "CREATE TABLE USERS (UID INT PRIMARY KEY AUTO_INCREMENT,FNAME VARCHAR(20),LNAME VARCHAR(20),AGE INT,DATE VARCHAR(20),EMAIL VARCHAR(50),PHONE VARCHAR(20),ADDRESS VARCHAR(100));"
+                var sql = "CREATE TABLE USERS (uid int primary key auto_increment,fname varchar(20),lname varchar(20),age int,date varchar(20),email varchar(50),phone varchar(20),address varchar(100));"
                 db.query(sql,function(err,result){
                     if(err) console.log(err);
                     else{
@@ -124,7 +124,7 @@ db.connect(function(err) {
             }
 
             for(var i=0;i<tables.length;i++){
-                if(tables[i].TABLE_NAME == "gymitems") flag5 = 1;
+                if(tables[i].TABLE_NAME == "GYMITEMS") flag5 = 1;
             }
  
 
@@ -133,22 +133,22 @@ db.connect(function(err) {
                 db.query(sql,function(err,result){
                     if(err) console.log(err);
                     else{
-                        console.log("gymitems created");
+                        console.log("GYMITEMS created");
                     }
                 });
             }
 
             for(var i=0;i<tables.length;i++){
-                if(tables[i].TABLE_NAME == "feedback") flag6 = 1;
+                if(tables[i].TABLE_NAME == "FEEDBACK") flag6 = 1;
             }
 
 
             if(!flag6){
-                var sql = "CREATE TABLE feedback (id int primary key auto_increment,name varchar(50),email varchar(60),phone varchar(20),message varchar(2000));"
+                var sql = "CREATE TABLE FEEDBACK (id int primary key auto_increment,name varchar(50),email varchar(60),phone varchar(20),message varchar(2000));"
                 db.query(sql,function(err,result){
                     if(err) console.log(err);
                     else{
-                        console.log("feedback table created");
+                        console.log("FEEDBACK table created");
                     }
                 });
             }
@@ -187,7 +187,7 @@ app.post("/newentry", (req, res) => {
     const mail = req.body.mail;
     const phone = req.body.phone;
     const address = req.body.address;
-    var sql = "INSERT INTO users values(?,?,?,?,?,?,?,?);";
+    var sql = "INSERT INTO USERS values(?,?,?,?,?,?,?,?);";
     db.query(sql,[null,fname,lname,age,date,mail,phone,address],(err,result)=>{
         if(err){
             console.log(err);
@@ -218,7 +218,7 @@ app.get("/newentry",(req,res)=>{
 });
 
 app.get("/showEntries",(req,res)=>{
-    db.query("SELECT * from users",(err,result,fields)=>{
+    db.query("SELECT * from USERS",(err,result,fields)=>{
         if(err) {
             res.send(err);
         }
@@ -263,7 +263,7 @@ app.post("/bmi", (req, res) => {
         status = 3;
     }
 
-    const sql = "SELECT wtstatus, recommendation from diet where sno="+status+";";
+    const sql = "SELECT wtstatus, recommendation from DIET where sno="+status+";";
     db.query(sql, (err, result, fields) => {
         if(err) {
             console.log(err);
@@ -294,7 +294,7 @@ app.get("/gymItems",(req,res)=>{
 
 
 app.get("/products",(req,res)=>{
-    const sql = "SELECT * FROM gymItems;";
+    const sql = "SELECT * FROM GYMITEMS;";
     db.query(sql,(err,result,fields)=>{
         if(err) {
             res.send(err);
@@ -311,7 +311,7 @@ app.post("/gymItems",upload.single('ProductImage'),(req,res)=>{
     var name = req.body.name;
     var use = req.body.use;
     console.log(name);
-    const sql = "INSERT INTO gymItems VALUES(NULL,?,NULL,?,?);"  //primary key,name,imagePath,imageHere,howToUse
+    const sql = "INSERT INTO GYMITEMS VALUES(NULL,?,NULL,?,?);"  //primary key,name,imagePath,imageHere,howToUse
     db.query(sql,[name,image,use],(err,result,fields)=>{
         if(err) console.log(err);
         else{
@@ -330,7 +330,7 @@ app.post("/contact",(req,res)=>{
     const email = req.body.email;
     const phone = req.body.phone;
     const message = req.body.message;
-    const sql = "INSERT INTO feedback values (NULL,?,?,?,?)";
+    const sql = "INSERT INTO FEEDBACK values (NULL,?,?,?,?)";
     db.query(sql,[name,email,phone,message],(err,result,fields)=>{
         if(err) console.log(err);
         else {
@@ -345,7 +345,7 @@ app.get("/adminOption",(req,res)=>{
 });
 
 app.get("/trainers",(req,res)=>{
-    db.query("SELECT * from trainers",(err,result,fields)=>{
+    db.query("SELECT * from TRAINERS",(err,result,fields)=>{
         if(err) {
             res.send(err);
         }
@@ -363,7 +363,7 @@ app.post("/addTrainer",(req,res)=>{
     var speci=req.body.speci;
     var email=req.body.email;
 
-    db.query("INSERT INTO trainers VALUES (?,?,?,?)",[null,name,speci,email],(err,result)=>{
+    db.query("INSERT INTO TRAINERS VALUES (?,?,?,?)",[null,name,speci,email],(err,result)=>{
         if(err) console.log(err);
         else{
             res.redirect("/addTrainer");
