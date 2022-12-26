@@ -1,0 +1,38 @@
+<%- include("partials/header"); -%>
+<section class="equiments-body">
+        <ul>
+        <% products.forEach((product)=> { %>
+            <% if(product.imaghere === null) { %>
+                <li><%=product.name%> <img src=<%=product.imgpath%> > </li>
+            <% } else { %>
+                <li>
+                    <div class="gym-container">	
+                            <div class="product-details">
+                                <h1><%= product.name %></h1>
+                                        <p class="information mt-3">
+                                            <%= product.howtouse %>
+                                        </p>       
+                            </div>
+                                
+                            <div class="product-image">
+                                <img src="data:image/png;base64,<%=product.imaghere%>" alt="">
+                                <div class="equipment-info">
+                                    <h2> Description</h2>
+                                    <ul>
+                                        <li>Motorized</li>
+                                        <li>Inclination Level 18</li>
+                                        <li>Maximum Weight Support 150 kg</li>
+                                        <li>Speed: 0.8 to 18 km/h</li>
+                                        <li>For Incline Pushups, Reverse Mountain Climbers, Treadmill Push</li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+                </li>
+                <% } %>
+            <% }) %>
+        </ul>
+</section>
+
+<script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>
+

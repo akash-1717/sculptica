@@ -1,0 +1,27 @@
+<%- include("partials/header"); -%>
+
+<div class="add-equiments">
+    <h4>Store photo in DB</h4>
+    <br>
+<form action="/gymItems" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="name">Equipment Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="ProductImage">Equiptment Image</label>
+        <input type="file" class="form-control-file" id="ProductImage" name="ProductImage">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="name">Used for</label>
+        <textarea type="text" class="form-control" id="name" name="use"></textarea>
+    </div>
+    <br>
+    <button class="add-product btn btn-primary" type="submit">Add the product</button>
+</form>
+</div>
+
+<script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>
+

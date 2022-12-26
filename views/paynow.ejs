@@ -1,0 +1,121 @@
+<%- include("partials/header") -%>
+
+<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+<body class="pricing-body">
+<section class="pricing py-5">
+    <div class="container">
+      <div class="row" style="height: 37rem; justify-content: center;">
+        <!-- Free Tier -->
+        <div class="col-lg-4">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">premium</h5>
+              <h6 class="card-price text-center">&#8377 3000<span class="period">/month</span></h6>
+              <hr>
+              <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Open 24 x 7</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited access to all equipments</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Online community support</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Free access all over India</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly status reports</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Free access to yoga and crossfit</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Get recommendations from our experts</li>
+              </ul>
+              <div class="d-grid">
+              <form action="/paynow" method="post">
+                <button class="btn btn-primary text-uppercase"  type="submit" id="rzp-button1" style="width: 24rem;" name="plus">BUY</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+</body>
+  
+
+
+<script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>
+
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script>
+        var orderId ;
+        $(document).ready(function(){
+        var settings = {
+        "url": "/create/orderId",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "amount": "300000"
+        }),
+        };
+
+        //creates new orderId everytime
+        $.ajax(settings).done(function (response) {
+
+        orderId=response.orderId;
+        console.log(orderId);
+        $("button").show();
+        });
+        });
+
+        document.getElementById('rzp-button1').onclick = function(e){
+            var options = { 
+                "key": "rzp_test_6UGm13aOlZF5Sz", // Enter the Key ID generated from the Dashboard
+                "amount": "300000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "currency": "INR",
+                "name": "Sculptica",
+                "description": "Test Transaction",
+                "image": "../../dumbell-solid.svg",
+                "order_id":orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "handler": function (response){
+                    alert("Please note down the payment id : "+response.razorpay_payment_id)
+                    // alert(response.razorpay_order_id);
+                    // alert(response.razorpay_signature)
+                     var settings = {
+                    "url": "/api/payment/verify",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "data": JSON.stringify({response}),
+                    }
+                    
+                    //creates new orderId everytime
+                    $.ajax(settings).done(function (response){
+                        alert(JSON.stringify(response));
+                    });
+                },
+        "theme": {
+        "color": "#ff4a4a"
+        }
+    };   
+        var rzp1 = new Razorpay(options);
+        rzp1.on('payment.failed', function (response){
+                alert(response.error.code);
+                alert(response.error.description);
+                alert(response.error.source);
+                alert(response.error.step);
+                alert(response.error.reason);
+                alert(response.error.metadata.order_id);
+                alert(response.error.metadata.payment_id);
+        });
+
+        rzp1.open();
+        e.preventDefault();
+}
+
+    </script>
+    <br style="width: 200px;">
+
+<script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>
+    

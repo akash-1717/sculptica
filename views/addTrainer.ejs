@@ -1,0 +1,42 @@
+<%- include("partials/header"); -%>
+
+
+<div class="container w-50">
+
+    <h5 class="text-center text-danger" style="text-decoration: none;"> Add new Trainer </h5>
+   <form action="/addTrainer" method="post">
+            <div class="form-group m-3">
+            <label for="name">Enter Name</label>
+            <input onkeydown="return /[a-z]/i.test(event.key)"  type="text" class="form-control" id="name" name="name" placeholder="Name" required></input>
+            </div>
+            <div class="form-group m-3">
+            <label for="speci">Specification</label>
+            <input type="text" class="form-control" id="speci" name="speci" placeholder="Specification" required></input>
+            </div>
+            
+            <div class="form-group m-3">
+            <label for="email">Enter Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required></input>
+            </div>
+        
+     <button type="submit" class="btn btn-dark m-3">Add Trainer</button>
+     
+   </form>
+
+   <br>
+   <br>
+
+
+    <h5 class="text-center text-danger" style="text-decoration: none;"> Remove Trainer </h5>
+
+   <form  action="/removeTrainer" method="post">
+        <div class="form-group m-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control"  name="email" placeholder="Email" required></input>
+        </div>
+        <button type="submit" class="btn btn-dark m-3">Remove Trainer</button>
+   </form>
+   
+   </div>
+
+   <script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>

@@ -1,0 +1,84 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+
+    <div class="show-delete">
+        <div>
+          <form action="/showEntries" method="get">
+              <button class="btn btn-dark" type="submit">Show all entries</button>
+          </form>
+        </div>
+        
+        <hr>
+        
+        <div>
+          <form action="/deleteEntry" method="post">
+            <div class="form-outline form-group">
+              <input type="number" name="phnum" class="form-control" placeholder="phone no."></input> <br>
+              <label class="form-label text-danger">Phone number</label>
+              <button class="btn btn-dark" type="submit">Delete entry</button>
+            </div>
+          </form>
+        </div>
+
+    </div>
+
+
+    <hr>
+
+    <h5 style="text-align: center;"><strong>INSERT NEW USER</strong></h5>
+
+    <form class="container w-75 ml-5" method="POST" action="/newentry">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <input onkeydown="return /[a-z]/i.test(event.key)"  type="text" id="form6Example1" class="form-control" name="fname" required>
+              <label class="form-label text-danger" for="form6Example1">First name</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input onkeydown="return /[a-z]/i.test(event.key)"  type="text" id="form6Example2" class="form-control" name="lname" required/>
+              <label class="form-label text-danger" for="form6Example2">Last name</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="number" id="form6Example3" class="form-control" name="age" required/>
+            <label class="form-label text-danger" for="form6Example3">Age</label>
+        </div>
+      
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="form6Example5" class="form-control" name="address" />
+          <label class="form-label text-danger" for="form6Example5">Address</label>
+        </div>
+      
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="email" id="form6Example9" class="form-control" name="mail" required/>
+          <label class="form-label text-danger" for="form6Example9">Email</label>
+        </div>
+      
+        <!-- Number input -->
+        <div class="form-outline mb-4">
+          <input type="number" id="form6Example6" class="form-control" name="phone" required/>
+          <label class="form-label text-danger" for="form6Example6">Phone</label>
+        </div>
+      
+        <!-- Checkbox -->
+        <div class="form-check d-flex justify-content-center mb-4">
+          <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" />
+          <label class="form-check-label" for="form6Example8">I agree to the <a href="#"> Terms and conditions. </a> </label>
+        </div>
+      
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-block mb-4 btn-dark">Add user</button>
+      </form>
+
+</div>
+
+  <script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>
+

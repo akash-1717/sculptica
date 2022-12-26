@@ -1,0 +1,43 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+    <h1 style="margin-left: 11rem;">BMI Calculator</h1>
+    <br>
+
+
+
+
+    <form class="container w-75 ml-5" method="POST" action="/bmi">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example111" class="form-control" name="weight" placeholder="in kgs" required autocomplete="off" />
+              <label class="form-label" for="form6Example111">Weight</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example222" class="form-control" name="height" placeholder="in metres" required autocomplete="off" />
+              <label class="form-label" for="form6Example222">Height</label>
+            </div>
+          </div>
+        </div>
+
+        <div>
+            <h5>
+                Calculate your BMI and get diet recommendation from our experts.
+            </h5>
+        </div>
+    
+        
+      
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-dark btn-block mb-4">Calculate</button>
+      </form>
+
+
+
+</div>
+
+<%- include("partials/footer1"); -%>

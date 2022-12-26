@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+ <% results.forEach(function(entry) { %>
+  <div class="feedback-container"> 
+    <div class="user-name row">
+      <div class="col-sm-2" style="width: 3%; padding-top: 7px;">
+        <i class="fa-solid fa-user fa-xl"></i>
+      </div> 
+      <div class="col">
+        <h4><%= entry.name %> </h4>
+        <p> <%= entry.email %></p>
+      </div>
+    </div>
+    <div class="user-feedback"> 
+      <p><%= entry.message %></p>
+    </div> 
+  </div>
+ <% }); %>
+
+</div>
+
+
+<footer>
+  <script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>
+</footer>

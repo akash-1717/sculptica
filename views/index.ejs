@@ -1,0 +1,225 @@
+<%- include("partials/header"); -%> 
+
+
+
+        <!-- HERO SECTION -->
+        <section class="section-hero">
+          <div class="container-hero hero-box">
+            <div class="hero-content margin-bottom">
+              <h3 class="heading margin-bottom" style="color:white">
+                A place for your fitness goals
+              </h3>
+              <p class="description">
+                We Offer Functional Training, Plyometric Boxes, Aerobics classes,
+                TRX And Much More
+              </p>
+            </div>
+            <div class="btn-group">
+              <form action="/paynow">
+                <button type="submit" class="btn__ btn__primary margin-right margin-bottom">
+                  Join us
+                </button>
+              </form>
+              <a href="#services">
+                <button class="btn__ btn__primary margin-right margin-bottom">Our services</button>
+              </a>
+            </div>
+          </div>
+        </section>
+        
+        <!-- {{!-- hero section  start --}} -->
+        <div class="container-fluid mt-5 hero-container">
+          <div class="row">
+              <div class="col mx-auto">
+                  <div class="row">
+                      <div class="col-md-6 col-12 hero-text order-md-0 order-1 d-flex justify-content-center align-items-start flex-column">
+                          <h1 class="myfont">GET READY TO <br> <span style="color: #ff2f2f;"><strong>BURN</strong></span></h1>
+                          <p class="myfont" style="font-size: 1.5rem; margin-top: -2rem;">We Are The Team Of <span class="bold-style">Professional Trainers.</span></p>
+                          <button class="btn-style btn-primary w-50" style="background-color: orangered; margin-top: -1rem;">Read More</button>
+                      </div>
+                      <!-- {{!-- right side --}} -->
+                      <div class="col-md-6 col-12 hero-text order-md-1 order-0">
+                          <figure>
+                              <img src="images/burnfat.jpg" alt="herosection_image" width="500" class="mt-5">
+                          </figure>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!-- {{!-- hero section ends --}} -->
+
+<br>
+<br>
+<br>
+<br>
+
+        <!-- About us-->
+        <div class="container-fluid mt-5 about-style" >
+          <div class="row" style="    margin-left: 3rem; margin-bottom: 2rem;">
+              <div class="col-md-10 col-1 mx-auto">
+                  <h2 class="myfont test-center main-heading" id="aboutid">About Us</h2>
+                  <p class="myfont test-center sub-heading" style="font-size: 2rem;">We are an online platform about mental health and well-being.</p>
+                  <div class="row">
+                      <div class="col-md-6 col-12 hero-text order-md-1 order-0">
+                          <figure>
+                              <img src="images/about.jpg" alt="herosection_image" width="500">
+                          </figure>
+                      </div>
+                      
+                       <!-- right side  -->
+                      <div class="col-md-6 col-12 hero-text d-flex justify-content-center align-items-start flex-column">
+                          <h1 class="myfont" style="text-align: center; font-size: 2.7rem; margin-left: 10rem; margin-bottom: -1.5rem;"><strong>WORK <br> SWEAT <br> ACHIEVE</strong></h1>
+      
+                          <style>
+                            #more {
+                              display: none;
+                            }
+                          </style>
+                          <p><span>Sculptica </span>
+                            is your new home in boutique wellness. We join the dependable standards of Pilates with forefront development to give you the most out of each exercise. Co-structured with the Villency Design Group, the 'Sculptica' Former displays an
+                            extraordinary crossbreed of seat and reformer Pilates techniques, mixing quality preparing and cardio for a full-body exercise.<span id="dots">...</span><span id="more">Software is developed with the aim of replacing the current manual
+                              system which was using at
+                              the Gym. The system supposed to provide easy access of the resources of the gym to its members
+                              while empowering the management process of the gym. Following major functionalities such as
+                              member management, attendance management, charges management, maintenance management
+                              and reports generation were identified.Access control was achieved with the user name and
+                              password. User access levels were also implemented to control the accessibility of the system.</p>
+                          <button class="btn-style btn-primary w-50" style="background-color: #ec615b; margin-top: -4rem;" onclick="myFunction()" id="myBtn">Read more</button>
+                
+                          <script>
+                            function myFunction() {
+                              var dots = document.getElementById("dots");
+                              var moreText = document.getElementById("more");
+                              var btnText = document.getElementById("myBtn");
+                
+                              if (dots.style.display === "none") {
+                                dots.style.display = "inline";
+                                btnText.innerHTML = "Read more";
+                                moreText.style.display = "none";
+                              } else {
+                                dots.style.display = "none";
+                                btnText.innerHTML = "Read less";
+                                moreText.style.display = "inline";
+                              }
+                            }
+                          </script>
+                      </div> 
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+      <!-- 
+        - #SERVICES
+      -->
+     
+      <section class="blog" id="services">
+        <div class="header">
+          <h1>Our Services</h1>
+        </div>
+        <div class="container-blog">
+        <div class="blog-card">
+          <div class="card__header">
+            <img src="images/blog-1.jpg" alt="card__image" class="card__image" width="600">
+          </div>
+          <div class="blog-card__body">
+            <span class="tag tag-blue">Body Building</span>
+            <h4>Body Building</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+          </div>
+          <div class="blog-card__footer">
+            <div class="user">
+              <img src="uploads/trainer1.jpg" alt="user__image" class="user__image">
+              <div class="user__info">
+                <h5>Henry</h5>
+                <small>2 years</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="card__header">
+            <img src="images/blog-2.jpg" alt="card__image" class="card__image" width="600">
+          </div>
+          <div class="blog-card__body">
+            <span class="tag tag-brown">Cross Fit</span>
+            <h4>Cross Fit</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+          </div>
+          <div class="blog-card__footer">
+            <div class="user">
+              <img src="uploads/trainer2.jpg" alt="user__image" class="user__image">
+              <div class="user__info">
+                <h5>Raj</h5>
+                <small>5 years</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="card__header">
+            <img src="images/blog-3.jpg" alt="card__image" class="card__image" width="600">
+          </div>
+          <div class="blog-card__body">
+            <span class="tag tag-red">Fitness</span>
+            <h4>Fitnesss</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+          </div>
+          <div class="blog-card__footer">
+            <div class="user">
+              <img src="uploads/trainer3.jpg" alt="user__image" class="user__image">
+              <div class="user__info">
+                <h5>Rachel</h5>
+                <small>1 year</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+
+
+      <section class="activity">
+        <div class="header">
+          <h1>EXtra Services</h1>
+      
+          <p>We offer extra services based on subscription plans. Below, some of them are mentioned. We also have profession trainers</p>
+        </div>
+        <div class="row1-container">
+          <div class="box box-down cyan">
+            <h2>Yoga</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, error?</p>
+            <img src="images/yoga.webp" style="width: 4rem;" alt="">
+          </div>
+      
+          <div class="box red">
+            <h2>Gymnastics</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing  ea.</p>
+            <img src="images/gymnastic.jpg" style="width: 8rem;" alt="">
+          </div>
+      
+          <div class="box box-down blue">
+            <h2>Boxing</h2>
+            <p>Lorem ipsum dolor sit amet consectetur elit.</p>
+            <img src="images/boxing.avif"style="width: 4rem;" alt="">
+          </div>
+        </div>
+        <div class="row2-container">
+          <div class="box orange">
+            <h2>Crossfit</h2>
+            <p>Lorem ipsum dolor sit amet consec!</p>
+            <img src="images/crossfit.png"  style="width: 8rem;" alt="">
+          </div>
+        </div>
+      </section>
+      
+      
+
+<%- include("partials/footer"); -%> 

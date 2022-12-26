@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+<h3 class="text-danger pt-4" style="text-decoration: none;">RECOMMENDED DIET PLAN FOR YOU</h3>
+<div class="container diet-container">
+  
+    
+    <div class="row diet-row" style="align-items: center;">
+        <div class="col">
+
+            <div class="row">
+              <h5 class="py-4">Your BMI : <%=data.BMI%> </h5>
+              <h5>STATUS : <%=data.wtstatus%></h5>
+            </div>
+
+            <div class="row">
+              <p><%=data.result%><p>
+            </div>
+
+        </div>
+
+        <div class="col-sm-2">
+
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNC4vx3NMrUzY13WBD10U_pbx9ed_ZJFQ3DC8Pk199&s"> <img>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>

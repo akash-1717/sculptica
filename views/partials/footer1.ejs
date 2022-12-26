@@ -1,0 +1,217 @@
+</main>
+
+<br>
+<br>
+
+
+
+<!-- Footer -->
+<!-- background-color: rgb(255, 124, 124); -->
+<footer class="text-center text-white" style="font-size: 0.8rem; background-color:#1B2430;">
+    <!-- Grid container -->
+    <div class="container-fluid p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://www.facebook.com/thewebsitebrewery" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+  
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Form -->
+      
+  
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+          Each new day is an opportunity to improve yourself. Take it. And make the most of it. <br> Thank you for reaching us. 
+        </p>
+      </section>
+      <!-- Section: Text -->
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+  
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">
+                <i class="fa-solid fa-phone fa-l"></i>
+                 Contact us
+            </h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>Akash 
+                <a href="tel:+916363750120" class="myHover">+91 63637 50120</a>
+              </li>
+              <li>Abhishek 
+                <a href="tel:+919019290670" class="myHover">+91 90192 90670</a>
+              </li>
+              <li> Ankith
+                <a href="tel:+919483649837" class="myHover">+91 94836 49837</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">
+                <i class="fa-solid fa-envelope fa-l"></i>
+                Mail us
+            </h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="mailto:akashpersetti17@gmail.com" class="myHover">akashpersetti17@gmail.com</a>
+              </li>
+              <li>
+                <a href="mailto:abhisheknaik720@gmail.com" class="myHover">abhisheknaik720@gmail.com</a>
+              </li>
+              <li>
+                <a href="mailto:2020cs_ankithbshetty_a@nie.ac.in" class="myHover">ankithbshetty@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">
+                <i class="fa-solid fa-location-dot"></i>
+                Address
+            </h5>
+  
+            <ul class="list-unstyled mb-0">
+              <li class="text-white">
+                The National Institute of Engineering
+              </li>
+              <li class="text-white">
+                (South Campus)
+              </li>
+              <li class="text-white">
+                Mananthavadi Road
+              </li>
+              <li class="text-white">
+                Mysuru - 570008
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022
+      Copyright: Sculptica
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+
+
+
+
+<script>
+
+    // navbar 
+
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+
+
+
+    // slideshow
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    }
+
+
+
+
+    //menu button
+    function myFunction(x) {
+        x.classList.toggle("change");
+    }
+
+
+
+    // login button for admin 
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    
+  </script>
+  <script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>
+  <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

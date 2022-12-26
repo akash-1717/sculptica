@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+
+
+<div class="container">
+
+<table class="table">
+    <thead>
+        <tr style="background-color: #faf7f0;">
+            <th><strong>UID</strong></th>
+            <th><strong>First Name</strong></th>
+            <th><strong>Last Name</strong></th>
+            <th><strong>Age</strong></th>
+            <th><strong>Date of Joining</strong></th>
+            <th><strong>Email</strong></th>
+            <th><strong>Phone</strong></th>
+            <th><strong>Address</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0;i<result.length;i++){ %>
+        <tr style="background-color: #faf7f0;">
+            <td><%=result[i].UID%></td>
+            <td><%=result[i].FNAME%></td>
+            <td><%=result[i].LNAME%></td>
+            <td><%=result[i].AGE%></td>
+            <td><%=result[i].DATE%></td>
+            <td><%=result[i].EMAIL%></td>
+            <td><%=result[i].PHONE%></td>
+            <td><%=result[i].ADDRESS%></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
+
+</div>
+<script src="https://kit.fontawesome.com/f277da5ba5.js" crossorigin="anonymous"></script>
+
+
+
+
+
