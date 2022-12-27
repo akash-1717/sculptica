@@ -29,6 +29,13 @@ var db = mysql.createConnection({
     port: 10157
 });
 
+// var db = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password: "@Akash2002",
+//     database: "sculptica"
+// });
+
 const underweight = "Eating at least 5 portions of a variety of fruit and vegetables every day. Basing meals on potatoes, bread, rice, pasta or other starchy carbohydrates. Choose wholegrain where possible. Having some dairy or dairy alternatives (such as soya drinks and yoghurts). Have whole (full-fat) milk until you build your weight back up. Eating some beans, pulses, fish, eggs, meat and other protein. Aim for 2 portions of fish every week ? 1 of which should be oily, such as salmon or mackerel. Choosing unsaturated oils and spreads, such as sunflower or rapeseed, and eating them in small amounts. Drinking plenty of fluids. The government recommends 6 to 8 glasses a day. But try not to have drinks just before meals to avoid feeling too full to eat.";
 
 const normal = "Emphasize fruits, vegetables, whole grains, and fat-free or low-fat milk and milk products. Include a variety of protein foods such as seafood, lean meats and poultry, eggs, legumes (beans and peas), soy products, nuts, and seeds. Consume food which is low in added sugars, sodium, saturated fats, trans fats, and cholesterol. Stay within your daily calorie needs.";
