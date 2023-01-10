@@ -18,8 +18,8 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const io = new WebSocket.Server({ noServer: true });
-global.io = new WebSocket.Server({ noServer: true });
+// const io = new WebSocket.Server({ noServer: true });
+// global.io = new WebSocket.Server({ noServer: true });
 
 app.use(express.static("public"));
 app.use(cors());
