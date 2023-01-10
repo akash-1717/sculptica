@@ -22,11 +22,11 @@ app.use(express.static("public"));
 app.use(cors());
 
 var db = mysql.createConnection({
-    host: "mysql-101990-0.cloudclusters.net",
+    host: "mysql-104344-0.cloudclusters.net",
     user: "admin",
-    password: "ng5kGc40",
+    password: "y0ev6CVZ",
     database: "sculptica",
-    port: 10157
+    port: 10218
 });
 
 // var db = mysql.createConnection({
